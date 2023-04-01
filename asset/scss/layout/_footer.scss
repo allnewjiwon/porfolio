@@ -1,0 +1,141 @@
+.footer{
+  position: relative;
+  z-index: -10;
+  
+  .top-area{
+    display: flex;
+    justify-content: space-between;
+    border:solid rgba(255, 255, 255, 0.3);
+    border-width: 1px 0;
+    @include tablet{
+      flex-direction: column;
+    }
+    .txt-box{
+      flex: 1;
+      position: relative;
+      .tit{
+        text-align: center;
+        font-size: 5vw;
+        font-family: $font-accent;
+        padding: 4vw;
+        transition: 0.5s cubic-bezier(1, 0, 0, 1);
+        @include mobile{
+          padding: 8vw;
+          font-size: 6vw;
+        }
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 0;
+        width: 100%;
+        background-color: #fff;
+        left: 0;
+        transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+        z-index: -1;
+      }
+      &:hover{
+        &::after{
+          height: 100%;
+        }
+        .tit{
+          color: #000;
+          z-index: 10;
+        
+        }
+      }
+    }
+    .link-area{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a{
+        display: block;
+        padding: 3.5vw;
+      }
+      @include tablet{
+        border-top:  1px solid rgba(255, 255, 255, 0.3);
+   
+      }
+      .box{
+     
+        // padding: 3.5vw;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include tablet{
+          flex: 1;
+          padding: 7vw;
+          &:first-child{
+            border: none;
+          }
+        }
+        img{
+          transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+          width: 2.5vw;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          height: 0;
+          width: 100%;
+          background-color: #fff;
+          left: 0;
+          transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+          z-index: -1;
+        }
+        &:hover{
+          &::after{
+            height: 100%;
+          }
+          img{
+            mix-blend-mode: difference;
+          }
+        }
+       
+      }
+      .link-mail, .link-phone{
+        img{
+          width: 2.5vw;
+        }
+        @include mobile{
+          img{
+            width: 5vw;
+          }
+        }
+      }
+      .link-velog, .link-github{
+        img{
+          width: 3.5vw;
+        }
+        @include mobile{
+          img{
+            width: 5.5vw;
+          }
+        
+        }
+      }
+      
+
+    }
+  }
+  .bottom-area{
+    padding: 1vw 0 1vw 4vw;
+    @include mobile{
+      padding: 4vw 0 4vw 8vw;
+    }
+    .copy{
+      font-size: .9vw;
+      font-family: $font-lighter;
+      color: rgba(255, 255, 255, 0.5);
+      @include mobile{
+        font-size: 2vw;
+      }
+    }
+  }
+}
